@@ -133,8 +133,8 @@ PerfUtility* PerfUtility::getInstance()
 
 PerfUtility::PerfUtility()
 {
-    int32_t dwPerfUtilityIsEnabled = 0;
-    double timeStamp = 0;
+    dwPerfUtilityIsEnabled = 0;
+    timeStamp = 0;
 }
 
 PerfUtility::~PerfUtility()

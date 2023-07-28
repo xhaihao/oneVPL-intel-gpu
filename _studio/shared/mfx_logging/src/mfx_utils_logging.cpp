@@ -103,14 +103,14 @@ inline bool SetLogLevelFromEnv()
 inline void SetLogFileFromEnv()
 {
     const char* logFileName = std::getenv("VPL_RUNTIME_LOG_FILE");
-    if (logFileName && gMfxLogFile == nullptr)
+    if (logFileName && gMfxLogFile == nullptr && gMfxLogLevel != LEVEL_DISABLED)
     {
         gMfxLogFile = std::shared_ptr<std::FILE>(fopen(logFileName, "a"), fileDeleter);
     }
 
     std::stringstream trace_name_stream;
     trace_name_stream << "VPL_API_LOG_THREAD_" << std::this_thread::get_id() << ".txt";
-    if (gMfxAPIDumpFile == nullptr)
+    if (gMfxAPIDumpFile == nullptr && gMfxLogLevel != LEVEL_DISABLED)
     {
         gMfxAPIDumpFile = std::shared_ptr<std::FILE>(fopen(trace_name_stream.str().c_str(), "a"), fileDeleter);
     }

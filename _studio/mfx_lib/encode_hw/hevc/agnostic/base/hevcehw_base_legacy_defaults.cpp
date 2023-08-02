@@ -2408,7 +2408,7 @@ public:
                     || ((REXTConstr & MFX_HEVC_CONSTR_REXT_MAX_12BIT) && BitDepth > 12)
                     || ((REXTConstr & MFX_HEVC_CONSTR_REXT_MAX_420CHROMA) && ChromaFormat > MFX_CHROMAFORMAT_YUV420)
                     || ((REXTConstr & MFX_HEVC_CONSTR_REXT_MAX_422CHROMA) && ChromaFormat > MFX_CHROMAFORMAT_YUV422)))
-            || (par.mfx.CodecProfile == MFX_PROFILE_HEVC_MAIN10 && !(BitDepth != 10 && BitDepth != 0))
+            || (par.mfx.CodecProfile == MFX_PROFILE_HEVC_MAIN10 && !(BitDepth != 10 && BitDepth != 0 && BitDepth != 8))
             || (par.mfx.CodecProfile == MFX_PROFILE_HEVC_MAINSP)
             || (par.mfx.CodecProfile == MFX_PROFILE_HEVC_MAIN && !(BitDepth != 8 && BitDepth != 0));
 
